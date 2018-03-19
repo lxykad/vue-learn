@@ -1,17 +1,23 @@
 <!-- html-->
 <template>
-  <div id="container">
-    <button v-on:click="click">{{a}}</button>
+  <div>
+    <!-- <button v-on:click="click">{{a}}</button>
 
-    <router-link to="/three">
-      <div id="text">55555</div>
-    </router-link>
+     <router-link to="/three">
+       <div id="text">3d</div>
+     </router-link>
 
-    <router-link to="/hello"> 带参跳转 </router-link>
-    <button @click="go">go</button>
-    <transition name="slide">
-      <router-view></router-view>
-    </transition>
+     <router-link to="/hello" target='_blank'> 新页面 </router-link>
+
+     <button @click="go">go</button>
+
+     <transition name="fade" mode="out-in">
+       <router-view></router-view>
+     </transition>-->
+    <ul>
+      <li v-for="item in list"><button @click="jump(item.route)">{{item.name}}</button></li>
+    </ul>
+    <router-view></router-view>
 
   </div>
 
@@ -23,7 +29,21 @@
 
     data() {
       return {
-        a: 1
+        a: 1,
+        list: [
+          {
+            name: 'hello',
+            route: '/hello'
+          },
+          {
+            name: 'empty',
+            route: '/empty'
+          },
+          {
+            name: 'three',
+            route: '/three'
+          }
+        ]
       }
     },
     methods: {
@@ -32,7 +52,10 @@
       },
       go() {
         console.log('go')
-        this.$router.push('/hello')
+        this.$router.push('/empty')
+      },
+      jump(index) {
+        this.$router.push(index)
       }
     },
     watch: {
@@ -89,6 +112,7 @@
     display: flex;
     background-color: aqua;
     width: 100%;
+    height: 100%;
 
   }
 

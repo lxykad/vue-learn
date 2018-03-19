@@ -8,7 +8,8 @@
           y: 0,
           z: 0
         }"
-        height="900"
+                   @on-mousemove="move"
+
                    src="static/models/collada/elf/elf.dae"></model-collada>
   </div>
 </template>
@@ -19,6 +20,11 @@
   export default {
     components: {
       ModelCollada
+    },
+    methods:{
+      move(event){
+        console.log(event)
+      }
     }
   }
 
