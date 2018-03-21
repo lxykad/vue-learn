@@ -1,8 +1,11 @@
 <!-- html-->
 <template>
-  <router-link to="/main">
-    <button>empty</button>
-  </router-link>
+
+  <div id="container">
+    <div>title</div>
+    <div>desc</div>
+  </div>
+
 
 </template>
 
@@ -15,10 +18,9 @@
         a: 1
       }
     },
-
     methods: {
       click() {
-        this.a++
+
       }
     },
     watch: {
@@ -27,31 +29,27 @@
       }
     },
 
-    beforeCreate: function () {
-
-      console.log('home before created')
-    },
-
     /**
      * 实例被创建之后执行代码
      */
     created: function () {
 
-      console.log('home created')
-    },
 
-    mounted: function () {
-      console.log('home mounted')
     },
 
     destoryed: function () {
-      console.log('home destoryed')
+
     },
+
   }
 
 </script>
 
 <!--css-->
 <style>
+  #container {
+    display: flex;
+    flex-direction: column;
+  }
 
 </style>

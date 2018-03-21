@@ -1,6 +1,6 @@
 <!-- html-->
 <template>
-<div>blank</div>
+
 
 </template>
 

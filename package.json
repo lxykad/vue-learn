@@ -13,6 +13,8 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "muse-ui": "^2.1.0",
     "vue": "^2.5.2",
     "vue-3d-model": "^1.0.0",
     "vue-router": "^3.0.1"
