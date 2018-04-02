@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Home from './components/home/home.vue'
 import Hello from './components/HelloWorld.vue'
+
 import HomePage from './components/main/HomePage.vue'
 
 import TabBar from './components/widget/tabBar.js'
@@ -12,6 +13,12 @@ import TabBar from './components/widget/tabBar.js'
 // muse-ui
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
+
+// store
+//import store from './vuex'
+import store from './vuex/store'
+
+
 Vue.use(MuseUI)
 
 Vue.config.productionTip = false
@@ -23,6 +30,7 @@ Vue.use(TabBar)
 new Vue({
   el: '#app',
   router,
+  store,
   components: {HomePage},
   template: '<homePage/>',
 })

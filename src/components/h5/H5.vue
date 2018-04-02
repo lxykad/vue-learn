@@ -1,51 +1,37 @@
 <!-- html-->
 <template>
-    <div>h5</div>
+  <div>{{count}}</div>
 
 </template>
 
 <!--js-->
 <script>
-    export default {
+  export default {
 
-        data() {
-            return {
-                a: 1
-            }
-        },
-        methods: {
-            click() {
-                this.a++
-            }
-        },
-        watch: {
-            a: function (value, oldValue) {
+    data() {
+      return {
 
-            }
-        },
+      }
+    },
+    computed: {
+      count() {
+        return this.$store.state.count
+      }
+    },
+    methods: {
+      click() {
 
-        beforeCreate: function () {
+      }
+    },
+    /**
+     * 实例被创建之后执行代码
+     */
+    created: function () {
 
-            console.log('home before created')
-        },
+      console.log('home created')
+    },
 
-        /**
-         * 实例被创建之后执行代码
-         */
-        created: function () {
-
-            console.log('home created')
-        },
-
-        mounted: function () {
-            console.log('home mounted')
-        },
-
-        destoryed: function () {
-            console.log('home destoryed')
-        },
-
-    }
+  }
 
 </script>
 

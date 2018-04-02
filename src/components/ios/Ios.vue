@@ -1,51 +1,47 @@
 <!-- html-->
 <template>
-    <div>ios</div>
+  <div>
+    {{count}}
+    <button @click="clickBt" style="margin-left: 15px"> click</button>
+  </div>
+
 
 </template>
 
 <!--js-->
 <script>
-    export default {
+  import {mapState, mapMutations} from 'vuex'
 
-        data() {
-            return {
-                a: 1
-            }
-        },
-        methods: {
-            click() {
-                this.a++
-            }
-        },
-        watch: {
-            a: function (value, oldValue) {
+  export default {
 
-            }
-        },
+    data() {
+      return {}
+    },
 
-        beforeCreate: function () {
+    /*
+      mapState 写法
+    * */
+    computed: {
 
-            console.log('home before created')
-        },
+      count() {
+        return this.$store.state.list.filter(data => data > 3)
+      }
+    },
 
-        /**
-         * 实例被创建之后执行代码
-         */
-        created: function () {
+    methods: {
+      clickBt() {
+        this.$store.commit('add2')
+      }
+    },
+    /**
+     * 实例被创建之后执行代码
+     */
+    created: function () {
 
-            console.log('home created')
-        },
 
-        mounted: function () {
-            console.log('home mounted')
-        },
+    },
 
-        destoryed: function () {
-            console.log('home destoryed')
-        },
-
-    }
+  }
 
 </script>
 
