@@ -1,7 +1,19 @@
 <!-- html-->
 <template>
-  <div>
-    {{count}}
+  <div class="ios-wrapper">
+    <div>
+      {{count}}
+    </div>
+    <div>
+      {{list}}
+    </div>
+    <div>
+      {{sortlist}}
+    </div>
+    <div>
+      {{name}}
+    </div>
+
     <button @click="clickBt" style="margin-left: 15px"> click</button>
   </div>
 
@@ -23,14 +35,29 @@
     * */
     computed: {
 
+      list() {
+        return this.$store.state.list
+      },
       count() {
-        return this.$store.state.list.filter(data => data > 3)
+        return this.$store.state.count
+      },
+      sortlist() {
+        return this.$store.getters.sortList
+      },
+      name() {
+        return this.$store.state.name
       }
     },
 
     methods: {
       clickBt() {
-        this.$store.commit('add2')
+       // this.$store.commit('add', 5)
+       // this.$store.commit('setList')
+        this.$store.dispatch('set')
+          .then(()=>{
+            this.$store.commit('add', 5)
+              console.log('then')
+          })
       }
     },
     /**
@@ -45,7 +72,10 @@
 
 </script>
 
-<!--css-->
 <style>
+  .ios-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 
 </style>

@@ -34,15 +34,12 @@
          */
         created: function () {
 
-            console.log('home created')
         },
 
         mounted: function () {
-            console.log('home mounted')
         },
 
         destoryed: function () {
-            console.log('home destoryed')
         },
 
     }
