@@ -1,6 +1,12 @@
 <!-- html-->
 <template>
-  <div>{{count}}</div>
+  <div class="wrapper">
+    <div>
+      {{count}}
+    </div>
+    <button class="bt" @click="btClick">open</button>
+
+  </div>
 
 </template>
 
@@ -9,9 +15,7 @@
   export default {
 
     data() {
-      return {
-
-      }
+      return {}
     },
     computed: {
       count() {
@@ -19,8 +23,8 @@
       }
     },
     methods: {
-      click() {
-
+      btClick() {
+        console.log('click')
       }
     },
     /**
@@ -28,14 +32,24 @@
      */
     created: function () {
 
-      console.log('home created')
     },
 
   }
 
 </script>
 
-<!--css-->
-<style>
+<style scoped>
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+  }
+
+  .bt {
+    width: 120px;
+    text-align: center;
+  }
 
 </style>
